@@ -1,0 +1,4 @@
+/home/diogorocha/Aula12/diogorocha_pari/build/CMakeFiles/rebuild_cache.dir
+/home/diogorocha/Aula12/diogorocha_pari/build/CMakeFiles/cpfiles.dir
+/home/diogorocha/Aula12/diogorocha_pari/build/CMakeFiles/edit_cache.dir
+/home/diogorocha/Aula12/diogorocha_pari/build/CMakeFiles/myf.dir

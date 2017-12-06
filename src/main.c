@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
         /* load the interface after a configuration file*/
         builderG = gtk_builder_new(); //cria a variavel onde se irão fazer alterações na interface gráfica
-        gtk_builder_add_from_file(builderG, "Ex1.glade", NULL);
+        gtk_builder_add_from_file(builderG, "mydr2.glade", NULL);
 
         /* connect the signals in the interface */
         gtk_builder_connect_signals(builderG, NULL);
@@ -79,7 +79,15 @@ int main(int argc, char *argv[])
 
         /* start the event loop */
 	p_InitTimer(); //não se deve criar o timer antes de criar a interface gráfica
+
+        g_timeout_add(30, (GSourceFunc) pari_UpdateImageAreas, (gpointer) NULL);
+        captureG=pari_StartImageAcquisition();
+
         gtk_main();
+
+	cvReleaseCapture(&captureG);             //Release capture device.
+        cvReleaseImage(&dst_imageG);             //Release image (free pointer when no longer used)
+        cvReleaseImage(&src_imageG);             //Release image (free pointer when no longer used).
 
         return 0;
 #endif
